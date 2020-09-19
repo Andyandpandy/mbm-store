@@ -11,10 +11,10 @@ namespace MbmStore.Controllers
     {
         public ActionResult Index()
         {
-            // Alternative solution based on tip
-
             
-            
+            /*
+             Alternative tip solution.. I would prefer this..
+             
             List<Book> books = new List<Book>();
             books = Repository.Products.OfType<Book>().ToList();
             ViewBag.Books = books;
@@ -26,13 +26,7 @@ namespace MbmStore.Controllers
             List<MusicCD> musicCDs = new List<MusicCD>();
             musicCDs = Repository.Products.OfType<MusicCD>().ToList();
             ViewBag.musicCDs = musicCDs;
-            
-            System.Diagnostics.Debug.WriteLine(Repository.Products);
-            System.Diagnostics.Debug.WriteLine(Repository.Invoices);
-
-            System.Diagnostics.Debug.WriteLine(books.Count);
-            System.Diagnostics.Debug.WriteLine(movies.Count);
-            System.Diagnostics.Debug.WriteLine(musicCDs.Count);
+            */
             ViewBag.Products = Repository.Products;
             return View();
         }

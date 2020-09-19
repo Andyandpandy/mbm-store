@@ -18,6 +18,21 @@
     }
 }
 
+@foreach (Product product in @ViewBag.Products){
+    /*
+     Alternative solution would be this
+     
+     @foreach (Movie movie in @ViewBag.Movies){
+        <div>
+            <strong>Title: </strong> @movie.Title<br />
+            Director: @movie.Director<br>
+            Price: @($"{movie.Price:0.00}") <br /><br />
+            <img src="/Content/Images/@movie.ImageFileName" alt="@movie.Title" />
+        </div>
+        }
+    */
+}
+
 <h2>Books</h2>
 @foreach (Product product in @ViewBag.Products){
 
