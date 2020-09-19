@@ -1,0 +1,48 @@
+﻿@using MbmStore.Models
+@using MbmStore.Models.Products
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>The Movies</h2>
+@foreach (Product product in @ViewBag.Products){
+
+    if (product is Movie movie)
+    {
+        <div>
+            <strong>Title: </strong> @movie.Title<br />
+            Director: @movie.Director<br>
+            Price: @($"{movie.Price:0.00}") <br /><br />
+            <img src="/Content/Images/@movie.ImageFileName" alt="@movie.Title" />
+        </div>
+    }
+}
+
+<h2>Books</h2>
+@foreach (Product product in @ViewBag.Products){
+
+    if (product is Book book)
+    {
+        <div>
+            <strong>Title: </strong> @book.Title<br />
+            Director: @book.Author<br>
+            Price: @($"{book.Price:0.00}") <br /><br />
+            <img src="/Content/Images/@book.ImageFileName" alt="@book.Title" />
+        </div>
+    }
+}
+
+<h2>Music CDs</h2>
+@foreach (Product product in @ViewBag.Products){
+
+    if (product is MusicCD musicCd)
+    {
+        <div>
+            <strong>Title: </strong> @musicCd.Title<br />
+            Director: @musicCd.Artist<br>
+            Price: @($"{musicCd.Price:0.00}") <br /><br />
+            <img src="/Content/Images/@musicCd.ImageFileName" alt="@musicCd.Title" />
+        </div>
+    }
+}
+

@@ -1,0 +1,40 @@
+﻿@using MbmStore.Models
+@using MbmStore.Models.Products
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Invoices</h2>
+<table>
+    <thead>
+    <tr><th>Customer</th><th>Product</th><th>Quantity</th><th>Price</th></tr>
+    </thead>
+    <tbody>
+        @foreach (Invoice invoice in ViewBag.Invoices)
+        {
+            <tr class="more-space">
+                <td>@invoice.Customer.Firstname @invoice.Customer.Lastname</td>
+                <td>
+                    @foreach (OrderItem orderItem in invoice.OrderItems)
+                    {
+                        <p>@orderItem.Product.Title</p>
+                    }
+                    <strong>Total</strong>
+                </td>
+                <td>
+                    @foreach (OrderItem orderItem in invoice.OrderItems)
+                    {
+                        <p>@orderItem.Quantity</p>
+                    }
+                </td>
+                <td>@foreach (OrderItem orderItem in invoice.OrderItems)
+                                    {
+                                        <p>@orderItem.Product.Price</p>
+                                    }
+                    <strong>@invoice.TotalPrice</strong>
+                    </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
